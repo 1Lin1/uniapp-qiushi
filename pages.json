@@ -1,0 +1,91 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style":{
+				"app-plus":{
+					//app页面不显示滚动条
+					"scrollIndicator": "none",
+					"titleNView":{
+						"type":"float",
+						"searchInput":{
+							"backgroundColor":"#F7F7F7",
+							"placeholder":"请输入您想要的商品",
+							"borderRadius":"4px",
+							"disabled":false
+						},
+						"buttons": [{
+								"fontSrc": "/static/font/iconfont.ttf",
+								"text": "\ue609",
+								"fontSize": "26",
+								"color": "#FEE42A",
+								"colorPressed":"#CCCCCC",
+								"float": "left",
+								"background": "rgba(0,0,0,0)"
+							},
+							{
+								"fontSrc": "/static/font/iconfont.ttf",
+								"text": "\ue653",
+								"fontSize": "27",
+								"color": "#303133",
+								"colorPressed":"#CCCCCC",
+								"background": "rgba(0,0,0,0)",
+								"redDot": true
+							}
+						]
+					}
+				}
+			}
+		}
+        ,{
+            "path" : "pages/message/message",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/paper/paper",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/profile/profile",
+            "style" : {}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "糗事百科",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
+	},
+	"tabBar":{
+		"color":"#ADADAD",
+		"selectedColor":"#FEE42A",
+		"backgroundColor":"#FFFFFF",
+		"borderStyle":"black",
+		"list":[
+			{
+				"pagePath":"pages/index/index",
+				"text":"主页",
+				"iconPath":"static/tabBar-icon/home.png",
+				"selectedIconPath":"static/tabBar-icon/home-active.png"
+			},
+			{
+				"pagePath":"pages/message/message",
+				"text":"动态",
+				"iconPath":"static/tabBar-icon/msg.png",
+				"selectedIconPath":"static/tabBar-icon/msg-active.png"
+			},
+			{
+				"pagePath":"pages/paper/paper",
+				"text":"小纸条",
+				"iconPath":"static/tabBar-icon/paper.png",
+				"selectedIconPath":"static/tabBar-icon/paper-active.png"
+			},
+			{
+				"pagePath":"pages/profile/profile",
+				"text":"个人",
+				"iconPath":"static/tabBar-icon/profile.png",
+				"selectedIconPath":"static/tabBar-icon/profile-active.png"
+			}
+		]
+	}
+}
