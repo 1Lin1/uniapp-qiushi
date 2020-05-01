@@ -1,106 +1,58 @@
 <template>
-	<view class="indexContent">
+	<view>
+		<!-- 顶部导航栏 -->
+		<swiper-list  :swiperHeight="swiperHeight"></swiper-list>
 		
-		<tab-bar :tabBars="tabBars"></tab-bar>
-		<block v-for="(item,index) in list" :key="item.id">
-			<indexlist :item="item"></indexlist>
-		</block>
+		
+		
 	</view>
 </template>
 
 <script>
-	import indexlist from '../../components/index/index-list.vue'
-	import tabBar from '../../components/index/tabBar.vue'
+	import swiperList from '../../components/index/swiperList.vue'
 	export default {
 		data() {
 			return {
-				
-				tabBars:[
-					{	name:'关注',
-						id:'guanzhu',
-					},
-					{
-					    name: '推荐',
-					    id: 'tuijian'
-					}, {
-					    name: '体育',
-					    id: 'tiyu'
-					}, {
-					    name: '热点',
-					    id: 'redian'
-					}, {
-					    name: '财经',
-					    id: 'caijing'
-					}, {
-					    name: '娱乐',
-					    id: 'yule'
-					}, {
-					    name: '军事',
-					    id: 'junshi'
-					}, 
-				],
-				list:[
-					{
-						id:'10001',
-						userpic:"../../static/image/topicpic/11.jpeg",//用户头像
-						username:"Mike", //用户名
-						isGuanzhu:true,
-						title:"如何通过手账改变生活",
-						type:"img",
-						titleImage:"../../static/image/datapic/11.jpg",//封面图
-						infoNum:{
-							cNum:1,//0:不操作 1:顶 2::踩
-							dingNum:11,
-							caiNum:5
-						},
-						commentNum:10,
-						shareNum:11
-					},
-					
-					{
-						id:'10002',
-						userpic:"../../static/image/topicpic/11.jpeg",//用户头像
-						username:"Rose", //用户名
-						isGuanzhu:false,
-						title:"如何通过手账改变生活",
-						type:"video",
-						titleImage:"../../static/image/datapic/11.jpg",//封面图
-						infoNum:{
-							playNum:"20w	",
-							time:"2:00",
-							cNum:2,//0:不操作 1:顶 2::踩
-							dingNum:11,
-							caiNum:5
-						},
-						commentNum:10,
-						shareNum:11
-					},
-				]
+				swiperHeight:0,
+			
 			}
 		},
 		onLoad() {
-
+			uni.getSystemInfo({
+			    success: (res) => {
+					// 动态获取手机屏幕高度
+			        this.swiperHeight = res.windowHeight;
+			      
+			    }
+			});
 		},
 		components:{
-			indexlist,
-			tabBar
+			swiperList
 		},
 		methods: {
 			clickTap(){
 				console.log('触发')
+			},
+		},
+		
+		//监听输入框点击事件
+		onNavigationBarSearchInputClicked() {
+			uni.navigateTo({
+			    url: '/pages/search/search'
+			});
+		},
+		
+		// 监听导航栏按钮事件
+		onNavigationBarButtonTap(e) {
+			if(e.index === 1){
+				uni.navigateTo({
+					url:'../add-input/add-input'
+				})
 			}
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.indexContent{
-		margin-top: 100upx;
-	}
-	
-	
-	// .content:nth-of-type(1){
-	// 	margin-top: 88upx;
-	// }
 	
 </style>

@@ -7,12 +7,11 @@
 					//app页面不显示滚动条
 					"scrollIndicator": "none",
 					"titleNView":{
-						"type":"float",
 						"searchInput":{
 							"backgroundColor":"#F7F7F7",
-							"placeholder":"请输入您想要的商品",
+							"placeholder":"请输入搜索内容",
 							"borderRadius":"4px",
-							"disabled":false
+							"disabled":true
 						},
 						"buttons": [{
 								"fontSrc": "/static/font/iconfont.ttf",
@@ -39,7 +38,11 @@
 		}
         ,{
             "path" : "pages/message/message",
-            "style" : {}
+            "style" : {
+				"app-plus":{
+					"titleNView":false
+				}
+			}
         }
         ,{
             "path" : "pages/paper/paper",
@@ -48,6 +51,34 @@
         ,{
             "path" : "pages/profile/profile",
             "style" : {}
+        }
+        ,{
+            "path" : "pages/search/search",
+            "style" : {
+				"app-plus":{
+					//app页面不显示滚动条
+					"scrollIndicator": "none",
+					"titleNView":{
+						"searchInput":{
+							"backgroundColor":"#F7F7F7",
+							"placeholder":"请输入搜索内容",
+							"borderRadius":"4px",
+							"disabled":false
+						},
+						"buttons": [
+							
+						]
+					}
+				}
+			}
+        }
+        ,{
+            "path" : "pages/add-input/add-input",
+            "style" : {
+				"app-plus":{
+					"titleNView":false
+				}
+			}
         }
     ],
 	"globalStyle": {

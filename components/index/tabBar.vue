@@ -16,34 +16,34 @@
 <script>
 	export default {
 		props:{
-			tabBars:{
-				type:Array,
-				default:[]
-			}
+			tabBars:Array,
+			tabIndex:Number,
 		},
 		data(){
 			return{
-				tabIndex:0,
 			}
 		},
 		methods:{
 			//顶部导航栏点击
 			tabClick(index){
-				this.tabIndex = index;
+				this.$emit('tabClick',index)
 			}
-		}
+		},
 	}
 </script>
 
 <style lang="scss" scoped>
-	.swiper-tab-list{
-		text {
-			padding: 16upx;
-			font-size: 34upx;
-			color: #000000;
-			font-weight: bold;
+	.uni-tab-bar{
+		.swiper-tab-list{
+			text {
+				padding: 14upx;
+				font-size: 34upx;
+				color: #000000;
+				font-weight: bold;
+			}
 		}
 	}
+	
 	//顶部导航栏激活
 	.activeTabItem{
 		border-bottom: 6upx solid #ffff00;

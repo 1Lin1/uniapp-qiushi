@@ -1,5 +1,5 @@
 <template>
-	<view class="content">
+	<view class="content animated rotateInDownLeft">
 		<view class="top">
 			<view class="tou-xiang">
 				<image :src="item.userpic" mode="widthFix"></image>
@@ -11,7 +11,7 @@
 			<view class="watch">
 				<button 
 				  class="icon iconfont icon-zengjia"
-				  :disabled="item.isGuanzhu"
+				  :disabled="isGuanzhu"
 				  @tap="guanZhuClick"
 				   >
 					<text>关注</text>
@@ -32,7 +32,7 @@
 					<view class="icon iconfont icon-bofang">
 					</view>
 					<view class="bofang-num">
-						{{item.infoNum.playNum}}次播放 {{item.infoNum.time}}
+						{{infoNum.playNum}}次播放 {{infoNum.time}}
 					</view>
 				</view>
 
@@ -45,16 +45,22 @@
 
 		<view class="bottom">
 			<view class="icon-left">
-				<view class="icon iconfont icon-icon_xiaolian-mian" :class="{active:item.infoNum.cNum == 1 ? true :false}">
+				<view class="icon iconfont icon-icon_xiaolian-mian" 
+				:class="{active:infoNum.cNum == 1 ? true :false}"
+				@tap="operate('ding')"
+				>
 				</view>
-				<view class="xiao-num">
-					{{item.infoNum.dingNum}}
+				<view class="xiao-num" >
+					{{infoNum.dingNum}}
 				</view>
 
-				<view class="icon iconfont icon-kulian" :class="{active:item.infoNum.cNum == 2 ? true :false}">
+				<view class="icon iconfont icon-kulian" 
+				:class="{active:infoNum.cNum == 2 ? true :false}"
+				@tap="operate('cai')"
+				>
 				</view>
-				<view class="ku-num">
-					{{item.infoNum.caiNum}}
+				<view class="ku-num" >
+					{{infoNum.caiNum}}
 				</view>
 			</view>
 			<view class="icon-right">
@@ -85,12 +91,47 @@
 		},
 		data() {
 			return {
-
+				isGuanzhu:this.item.isGuanzhu,
+				infoNum:this.item.infoNum,
 			};
 		},
 		methods:{
+			//关注操作
 			guanZhuClick(){
-				this.item.isGuanzhu = true
+				uni.showToast({
+					title:'关注成功',
+					icon:'success'
+				})
+				this.isGuanzhu = true
+			},
+			
+			//顶踩操作
+			operate(type){
+				switch(type){
+					case 'ding':
+						if(this.infoNum.cNum == 1)
+						 {
+						     return ; 
+						 }
+						this.infoNum.dingNum ++;
+						if(this.infoNum.cNum !== 0){
+							this.infoNum.caiNum --;
+						}
+						this.infoNum.cNum = 1;
+						break;
+					case 'cai':
+						if(this.infoNum.cNum == 2)  {
+						     return ; 
+						 }
+						this.infoNum.caiNum ++;
+						
+						//若无进行 操作
+						if(this.infoNum.cNum !== 0){
+							this.infoNum.dingNum --;
+						}
+						this.infoNum.cNum = 2;
+						break;
+				}
 			}
 		}
 	}

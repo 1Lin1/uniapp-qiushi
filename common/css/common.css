@@ -1,0 +1,20 @@
+.u-f{
+	display: flex;
+}
+.u-f-ajc{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.u-f-ajs {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.u-f-aje{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}

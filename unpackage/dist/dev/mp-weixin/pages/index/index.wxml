@@ -1,1 +1,1 @@
-<view class="content"><view></view></view>
+<view class="data-v-2cf8ca4c"><swiper-list vue-id="8dd740cc-1" swiperHeight="{{swiperHeight}}" class="data-v-2cf8ca4c" bind:__l="__l"></swiper-list></view>

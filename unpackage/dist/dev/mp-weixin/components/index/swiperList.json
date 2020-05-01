@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "indexlist": "/components/index/index-list",
+    "tab-bar": "/components/index/tabBar",
+    "no-thing": "/components/common/nothing"
+  }
+}

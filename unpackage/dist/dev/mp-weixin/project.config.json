@@ -4,11 +4,14 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false
+		"urlCheck": false,
+		"es6": true,
+		"minified": true,
+		"postcss": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.2",
-	"appid": "touristappid",
+	"appid": "wxdc389dc0750ca361",
 	"projectname": "仿糗事百科",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
