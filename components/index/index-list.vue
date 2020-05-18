@@ -2,7 +2,7 @@
 	<view class="content animated rotateInDownLeft">
 		<view class="top">
 			<view class="tou-xiang">
-				<image :src="item.userpic" mode="widthFix"></image>
+				<image :src="item.userpic" mode="widthFix" lazy-load></image>
 			</view>
 			<view class="username">
 				<text>{{item.username}}</text>
@@ -17,9 +17,9 @@
 					<text>关注</text>
 				</button>
 			</view>
-			<view class="icon iconfont icon-guanbi">
+			<!-- <view class="icon iconfont icon-guanbi">
 
-			</view>
+			</view> -->
 		</view>
 
 		<view class="center">
@@ -139,9 +139,9 @@
 
 <style lang="scss" scoped>
 	.content {
-		// margin-top: 88upx;
-		padding: 30upx;
-		border-bottom: 1upx solid #CCCCCC;
+		// margin-top: 88rpx;
+		padding: 30rpx;
+		border-bottom: 1rpx solid #CCCCCC;
 
 		.top {
 			display: flex;
@@ -149,22 +149,23 @@
 			align-items: center;
 
 			.tou-xiang {
+				flex-shrink: 0;
 				image {
-					width: 100upx;
-					height: 100upx;
+					width: 100rpx;
+					height: 100rpx;
 					border-radius: 50%;
 				}
 			}
 
 			.username {
 				font-size: $uni-font-size-lg;
-				margin-right: 280upx;
+				margin-right: 280rpx;
 				color: $uni-text-color-grey;
 			}
 			.watch{
 				button{
 					text{
-						font-size: 30upx;
+						font-size: 30rpx;
 					}
 				}
 			}
@@ -172,7 +173,7 @@
 
 		.center {
 			.content-title {
-				font-size: 40upx;
+				font-size: 40rpx;
 				font-weight: bolder;
 			}
 
@@ -182,29 +183,29 @@
 				image {
 					position: relative;
 					width: 100%;
-					border-radius: 20upx;
+					border-radius: 20rpx;
 				}
 
 				.videoStyle {
 
 					// position: relative;
 					.bofang-num {
-						width: 220upx;
-						height: 50upx;
-						line-height: 50upx;
+						width: 220rpx;
+						height: 50rpx;
+						line-height: 50rpx;
 						text-align: center;
 						position: absolute;
-						right: 20upx;
-						bottom: 20upx;
+						right: 20rpx;
+						bottom: 20rpx;
 						color: #FFFFFF;
 						background-color: rgba(51, 51, 51, 0.72);
-						border-radius: 40upx;
+						border-radius: 40rpx;
 						z-index: 1;
 					}
 
 					.icon-bofang {
 						position: absolute;
-						font-size: 140upx;
+						font-size: $bofang-font-size;
 						left: 40%;
 						top: 20%;
 						color: #FFFFFF;

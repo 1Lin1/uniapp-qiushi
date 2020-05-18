@@ -13,6 +13,13 @@
  */
 
 /* 颜色变量 */
+// 个人字体大小
+$my-font-size-lg:40rpx;
+$my-font-size-base:36rpx;
+$my-font-size-sm:28rpx;
+
+// 公共内边距
+$common-padding:20rpx;
 
 /* 行为相关颜色 */
 $uni-color-primary: #007aff;
@@ -42,6 +49,7 @@ $uni-border-color:#c8c7cc;
 $uni-font-size-sm:24rpx;
 $uni-font-size-base:28rpx;
 $uni-font-size-lg:32rpx;
+$bofang-font-size:140rpx; //播放按钮大小
 
 /* 图片尺寸 */
 $uni-img-size-sm:40rpx;

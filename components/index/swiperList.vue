@@ -8,7 +8,7 @@
 		
 		<view class="uni-tab-bar">
 			<swiper class="swiper-box" 
-			:style="{height:swiperHeight + 'px'}" 
+			:style="{height:swiperHeight *2 + 'rpx'}" 
 			:current="tabIndex"
 			@change="swiperChange"
 			>
@@ -39,7 +39,7 @@
 
 <script>
 	import indexlist from './index-list.vue';
-	import tabBar from './tabBar.vue';
+	import tabBar from '../common/tabBar.vue';
 	import noThing from '../common/nothing.vue'
 	export default {
 		props:{
@@ -215,8 +215,8 @@
 	.uni-tab-bar{
 		.swiper-tab-list{
 			text {
-				padding: 8upx;
-				font-size: 34upx;
+				padding: 8rpx;
+				font-size: 34rpx;
 				color: #000000;
 				font-weight: bold;
 			}
@@ -225,11 +225,11 @@
 	
 	//顶部导航栏激活
 	.activeTabItem{
-		border-bottom: 6upx solid #ffff00;
+		border-bottom: 6rpx solid #ffff00;
 	}
 	
 	.loadMore{
-		padding: 10upx;
+		padding: 10rpx;
 		text-align: center;
 		color: #aaaaaa;
 	}

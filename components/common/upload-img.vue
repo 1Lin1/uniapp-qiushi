@@ -200,8 +200,8 @@
 			position: absolute;
 			right: 0;
 			top: 0;
-			padding: 0 8upx;
-			border-radius: 10upx;
+			padding: 0 8rpx;
+			border-radius: 10rpx;
 			background-color: #808e9b;
 			opacity: 50%;
 			color: #FFFFFF;

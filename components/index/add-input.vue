@@ -254,23 +254,23 @@
 
 <style>
 .uni-textarea{
-	border: 1upx solid #EEEEEE;
+	border: 1rpx solid #EEEEEE;
 }
 .gonggao{
-	width: 500upx;
+	width: 500rpx;
 }
 .gonggao image{
 	width: 75%;
-	margin-bottom: 20upx;
+	margin-bottom: 20rpx;
 }
 .gonggao button{
-	margin-top: 20upx;
+	margin-top: 20rpx;
 	background: #FFE934;
 	color: #171606;
 }
 .addinput-foot{
 	background: #FFFFFF;
-	position: fixed;bottom: 0;left: 0;right: 0;height: 88upx;border-top:1upx solid #DDDDDD
+	position: fixed;bottom: 0;left: 0;right: 0;height: 88rpx;border-top:1rpx solid #DDDDDD
 }
 .addinput-foot view{
 	height: 100%;

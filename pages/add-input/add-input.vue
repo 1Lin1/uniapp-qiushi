@@ -162,18 +162,18 @@
 
 <style lang="scss" scoped>
 	.center{
-		width: 400upx;
+		width: 400rpx;
 	}
 	
 	.uni-textarea{
-		border-bottom: 1upx solid #EEEEEE;
+		border-bottom: 1rpx solid #EEEEEE;
 	}
 	
 	
 	// 弹出窗口
 	.popup{
-		width: 600upx;
-		height: 900upx;
+		width: 600rpx;
+		height: 900rpx;
 		background-color: #FFFFFF;
 		font-weight: bold;
 		.topImage{
@@ -187,7 +187,7 @@
 		.popup-Button{
 			height: 20%;
 			button{
-				width: 480upx;
+				width: 480rpx;
 				background-color: #FEE42A;
 			}
 			

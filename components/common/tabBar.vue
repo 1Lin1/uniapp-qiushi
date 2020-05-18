@@ -36,8 +36,8 @@
 	.uni-tab-bar{
 		.swiper-tab-list{
 			text {
-				padding: 14upx;
-				font-size: 34upx;
+				padding: 14rpx;
+				font-size: 34rpx;
 				color: #000000;
 				font-weight: bold;
 			}
@@ -46,6 +46,6 @@
 	
 	//顶部导航栏激活
 	.activeTabItem{
-		border-bottom: 6upx solid #ffff00;
+		border-bottom: 6rpx solid #ffff00;
 	}
 </style>

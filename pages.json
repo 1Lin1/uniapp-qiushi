@@ -2,23 +2,24 @@
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
 			"path": "pages/index/index",
-			"style":{
-				"app-plus":{
+			"style": {
+				"app-plus": {
 					//app页面不显示滚动条
 					"scrollIndicator": "none",
-					"titleNView":{
-						"searchInput":{
-							"backgroundColor":"#F7F7F7",
-							"placeholder":"请输入搜索内容",
-							"borderRadius":"4px",
-							"disabled":true
+					"bounce": "none", //关闭回弹效果
+					"titleNView": {
+						"searchInput": {
+							"backgroundColor": "#F7F7F7",
+							"placeholder": "请输入搜索内容",
+							"borderRadius": "4px",
+							"disabled": true
 						},
 						"buttons": [{
 								"fontSrc": "/static/font/iconfont.ttf",
 								"text": "\ue609",
 								"fontSize": "26",
 								"color": "#FEE42A",
-								"colorPressed":"#CCCCCC",
+								"colorPressed": "#CCCCCC",
 								"float": "left",
 								"background": "rgba(0,0,0,0)"
 							},
@@ -27,7 +28,7 @@
 								"text": "\ue653",
 								"fontSize": "27",
 								"color": "#303133",
-								"colorPressed":"#CCCCCC",
+								"colorPressed": "#CCCCCC",
 								"background": "rgba(0,0,0,0)",
 								"redDot": true
 							}
@@ -35,87 +36,163 @@
 					}
 				}
 			}
-		}
-        ,{
-            "path" : "pages/message/message",
-            "style" : {
-				"app-plus":{
-					"titleNView":false
+		}, {
+			"path": "pages/message/message",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"bounce": "none" //关闭回弹效果
 				}
 			}
-        }
-        ,{
-            "path" : "pages/paper/paper",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/profile/profile",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/search/search",
-            "style" : {
-				"app-plus":{
-					//app页面不显示滚动条
-					"scrollIndicator": "none",
-					"titleNView":{
-						"searchInput":{
-							"backgroundColor":"#F7F7F7",
-							"placeholder":"请输入搜索内容",
-							"borderRadius":"4px",
-							"disabled":false
-						},
+		}, {
+			"path": "pages/paper/paper",
+			"style": {
+				"navigationBarTitleText": "小纸条",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"titleNView": {
 						"buttons": [
-							
+							//左边
+							{
+								"fontSrc": "/static/font/iconfont.ttf",
+								"text": "\ue845",
+								"fontSize": "26",
+								"color": "#000000",
+								"colorPressed": "#CCCCCC",
+								"float": "left",
+								"background": "rgba(0,0,0,0)"
+							},
+
+							//右边
+							{
+								"fontSrc": "/static/font/iconfont.ttf",
+								"text": "\ue684",
+								"fontSize": "27",
+								"color": "#000000",
+								"colorPressed": "#CCCCCC",
+								"background": "rgba(0,0,0,0)"
+							}
 						]
 					}
 				}
 			}
-        }
-        ,{
-            "path" : "pages/add-input/add-input",
-            "style" : {
-				"app-plus":{
-					"titleNView":false
+		}, {
+			"path": "pages/profile/profile",
+			"style": {}
+		}, {
+			"path": "pages/search/search",
+			"style": {
+				"app-plus": {
+					//app页面不显示滚动条
+					"scrollIndicator": "none",
+					"titleNView": {
+						"searchInput": {
+							"backgroundColor": "#F7F7F7",
+							"placeholder": "请输入搜索内容",
+							"borderRadius": "4px",
+							"disabled": false
+						},
+						"buttons": [
+
+						]
+					}
 				}
 			}
-        }
-    ],
+		}, {
+			"path": "pages/add-input/add-input",
+			"style": {
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/topic-moreCate/topic-moreCate",
+			"style": {
+				"navigationBarTitleText": "话题分类",
+				"bounce": "none"
+			}
+		}, {
+			"path": "pages/topic-detail/topic-detail",
+			"style": {
+				"enablePullDownRefresh": true, //开启下拉刷新
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent",
+						"buttons": [{
+							"type": "menu"
+						}]
+					}
+				}
+			}
+
+		}, {
+			"path": "pages/user-list/user-list",
+			"style": {
+				"app-plus": {
+					//app页面不显示滚动条
+					"scrollIndicator": "none",
+					
+					"bounce":"none",
+					"animationType":"slide-in-left",
+					"titleNView": {
+						"autoBackButton": "false",
+						// "buttons": [{
+						// 	"text": "取消",
+						// 	"float": "right",
+						// 	"fontSize": "13",
+						// 	"color":"#000000",
+						// 	"colorPressed":"#BBBBBB",
+						// 	"fontWeight":"bold",
+						// 	"width":"auto"
+						// }],
+						"searchInput": {
+							"autoFocus": true,
+							"placeholder": "搜索糗事",
+							"borderRadius": "10upx",
+							"backgroundColor": "#F5F4F4"
+							
+						}
+					}
+
+				}
+			}
+		}
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "糗事百科",
 		"navigationBarBackgroundColor": "#FFFFFF",
 		"backgroundColor": "#FFFFFF"
 	},
-	"tabBar":{
-		"color":"#ADADAD",
-		"selectedColor":"#FEE42A",
-		"backgroundColor":"#FFFFFF",
-		"borderStyle":"black",
-		"list":[
-			{
-				"pagePath":"pages/index/index",
-				"text":"主页",
-				"iconPath":"static/tabBar-icon/home.png",
-				"selectedIconPath":"static/tabBar-icon/home-active.png"
+	"tabBar": {
+		"color": "#ADADAD",
+		"selectedColor": "#FEE42A",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "主页",
+				"iconPath": "static/tabBar-icon/home.png",
+				"selectedIconPath": "static/tabBar-icon/home-active.png"
 			},
 			{
-				"pagePath":"pages/message/message",
-				"text":"动态",
-				"iconPath":"static/tabBar-icon/msg.png",
-				"selectedIconPath":"static/tabBar-icon/msg-active.png"
+				"pagePath": "pages/message/message",
+				"text": "动态",
+				"iconPath": "static/tabBar-icon/msg.png",
+				"selectedIconPath": "static/tabBar-icon/msg-active.png"
 			},
 			{
-				"pagePath":"pages/paper/paper",
-				"text":"小纸条",
-				"iconPath":"static/tabBar-icon/paper.png",
-				"selectedIconPath":"static/tabBar-icon/paper-active.png"
+				"pagePath": "pages/paper/paper",
+				"text": "小纸条",
+				"iconPath": "static/tabBar-icon/paper.png",
+				"selectedIconPath": "static/tabBar-icon/paper-active.png"
 			},
 			{
-				"pagePath":"pages/profile/profile",
-				"text":"个人",
-				"iconPath":"static/tabBar-icon/profile.png",
-				"selectedIconPath":"static/tabBar-icon/profile-active.png"
+				"pagePath": "pages/profile/profile",
+				"text": "个人",
+				"iconPath": "static/tabBar-icon/profile.png",
+				"selectedIconPath": "static/tabBar-icon/profile-active.png"
 			}
 		]
 	}

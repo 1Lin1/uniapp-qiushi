@@ -21,8 +21,8 @@
 			uni.getSystemInfo({
 			    success: (res) => {
 					// 动态获取手机屏幕高度
-			        this.swiperHeight = res.windowHeight;
-			      
+			        this.swiperHeight = res.windowHeight + 100;
+					console.log(this.swiperHeight)
 			    }
 			});
 		},

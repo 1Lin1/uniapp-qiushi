@@ -1,6 +1,14 @@
 .u-f{
 	display: flex;
 }
+.u-f-jb{
+	display: flex;
+	justify-content: space-between;
+}
+.u-f-ac{
+	display: flex;
+	align-items: center;
+}
 .u-f-ajc{
 	display: flex;
 	justify-content: center;
